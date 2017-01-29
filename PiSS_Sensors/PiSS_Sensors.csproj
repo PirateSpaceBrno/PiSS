@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BC43464-D213-4186-AF90-C6F00823409A}</ProjectGuid>
+    <ProjectGuid>{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PiSS</RootNamespace>
+    <RootNamespace>PiSS_Sensors</RootNamespace>
     <AssemblyName>PiSS_Sensors</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Pin.cs" />
-    <Compile Include="Sensor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logging\Logging.csproj">

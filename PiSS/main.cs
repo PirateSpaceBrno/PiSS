@@ -5,8 +5,7 @@ namespace PiSS
 {
     class main
     {
-        public const bool IsDebug = true;
-        public static Logger _logger = new Logger(IsDebug);
+        public static Logger _logger = new Logger();
 
         static void Main(string[] args)
         {

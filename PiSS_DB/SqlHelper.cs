@@ -3,10 +3,10 @@ using MySql.Data.MySqlClient;
 
 namespace PiSS.Helpers
 {
-    class SqlHelper
+    public class SqlHelper
     {
         private MySqlConnection dbConn;
-        private static Logger _logger = main._logger;
+        private static Logger _logger = new Logger();
 
         private String dbConnectionString
         {

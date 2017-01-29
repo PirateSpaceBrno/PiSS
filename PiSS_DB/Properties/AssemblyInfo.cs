@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PiSS-Senzors")]
+[assembly: AssemblyTitle("PiSS_DB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PiSS-Senzors")]
+[assembly: AssemblyProduct("PiSS_DB")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7bc43464-d213-4186-af90-c6f00823409a")]
+[assembly: Guid("3c884cfb-04d5-4fa9-b18d-dbf777e62178")]
 
 // Version information for an assembly consists of the following four values:
 //

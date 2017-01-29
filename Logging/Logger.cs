@@ -5,7 +5,7 @@ namespace PiSS
 {
     public class Logger
     {
-        private static String _logFilePath = Environment.SpecialFolder.DesktopDirectory.ToString() + "\\PiSS.log";
+        private static String _logFilePath = Path.GetTempPath() + "\\PiSS.log";
         private FileInfo _logFile = new FileInfo(_logFilePath);
         private const int logSize = 20 * 1024 * 1024;
         private bool IsDebugRun;
@@ -13,10 +13,9 @@ namespace PiSS
         /// <summary>
         /// Creates an instance of logging engine.
         /// </summary>
-        /// <param name="debugRun">Specify if program is running in debug mode.</param>
-        public Logger(bool debugRun)
+        public Logger()
         {
-            IsDebugRun = debugRun;
+            IsDebugRun = File.Exists(Path.GetTempPath() + "PiSS.DEBUG");
         }
 
         public enum logLevel
