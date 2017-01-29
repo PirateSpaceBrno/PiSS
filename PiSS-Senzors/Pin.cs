@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using PinType = PiSS_Sensors.Constants.PinType;
+using PinType = PiSS.Constants.PinType;
 
-namespace PiSS_Sensors
+namespace PiSS
 {
     public class Pin
     {

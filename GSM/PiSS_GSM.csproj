@@ -7,8 +7,8 @@
     <ProjectGuid>{88F062E4-5230-4302-853A-EFCAF13B8161}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GSM</RootNamespace>
-    <AssemblyName>GSM</AssemblyName>
+    <RootNamespace>PiSS</RootNamespace>
+    <AssemblyName>PiSS_GSM</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using PiSS_Sensors;
-using GSM;
 
 namespace PiSS
 {

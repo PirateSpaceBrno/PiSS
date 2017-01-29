@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.IO;
 
 
-namespace GSM
+namespace PiSS
 {
     public class Phone
     {

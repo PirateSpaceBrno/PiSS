@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PiSS_Sensors
+namespace PiSS
 {
     public class Constants
     {

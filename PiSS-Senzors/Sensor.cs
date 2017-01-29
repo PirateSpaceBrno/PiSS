@@ -2,7 +2,7 @@
 using WiringPi;
 using Thread = System.Threading.Thread;
 
-namespace PiSS_Sensors
+namespace PiSS
 {
     public class Sensor
     {

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS_Sensors", "PiSS-Senzor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{553D86F8-D621-43B6-AA83-64EB98544B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSM", "GSM\GSM.csproj", "{88F062E4-5230-4302-853A-EFCAF13B8161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS_GSM", "GSM\PiSS_GSM.csproj", "{88F062E4-5230-4302-853A-EFCAF13B8161}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

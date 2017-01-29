@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GSM\GSM.csproj">
+    <ProjectReference Include="..\GSM\PiSS_GSM.csproj">
       <Project>{88f062e4-5230-4302-853a-efcaf13b8161}</Project>
-      <Name>GSM</Name>
+      <Name>PiSS_GSM</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logging\Logging.csproj">
       <Project>{553d86f8-d621-43b6-aa83-64eb98544b7f}</Project>
