@@ -15,7 +15,7 @@ namespace PiSS.Helpers
         }
 
         /// <summary>
-        /// Creates an instance of Sql connector by specifying connection string
+        /// Creates an instance of MySql connector by specifying connection string
         /// </summary>
         /// <param name="connectionString"></param>
         public SqlHelper(String connectionString)
@@ -24,7 +24,7 @@ namespace PiSS.Helpers
             dbConn = new MySqlConnection(connectionString);
         }
 
-        public void Connect()
+        private void Connect()
         {
             try
             {

@@ -13,11 +13,17 @@ namespace GSM
 {
     public class Phone
     {
+        private const string serialPortName = "/dev/ttyAMA0";
+        private const int serialPortBaudRate = 38400;
+        
         private SerialPort phoneSerialPort;
 
-        public Phone()
+        /// <summary>
+        /// Creates new instance of GSM phone.
+        /// </summary>
+        public Phone(int baudRate = serialPortBaudRate)
         {
-            phoneSerialPort = new SerialPort("/dev/ttyAMA0", 115200);
+            phoneSerialPort = new SerialPort(serialPortName, baudRate);
         }
 
         /// <summary>
@@ -70,9 +76,9 @@ namespace GSM
             phoneSerialPort.Write(Data);
         }
 
-        public void SendSMS()
+        public void Dial(string phoneNumber)
         {
-            
+            SendData(ATCommands.CallNumber(phoneNumber));
         }
     }
 }

@@ -30,7 +30,7 @@ namespace PiSS_Sensors
         }
 
         /// <summary>
-        /// Sensor ID
+        /// Returns Sensor ID
         /// </summary>
         public int Id
         {
@@ -41,7 +41,7 @@ namespace PiSS_Sensors
         }
 
         /// <summary>
-        /// GPIO Pin where the sensor is connected.
+        /// Returns GPIO Pin where the sensor is connected.
         /// </summary>
         public Pin Pin
         {
@@ -60,12 +60,15 @@ namespace PiSS_Sensors
             {
                 SensorState actualState;
 
-                Enum.TryParse<SensorState>(GPIO.digitalRead(Pin.WiringPiPinNumber).ToString(), out actualState);
+                Enum.TryParse(PinResponse.ToString(), out actualState);
 
                 return actualState;
             }
         }
 
+        /// <summary>
+        /// Returns actual pin response (~3.3V returns logical 1, ~0.8V returns logical 0)
+        /// </summary>
         public int PinResponse
         {
             get

@@ -7,11 +7,18 @@ namespace PiSS_Sensors
     {
         private int _physicalPinNumber;
 
+        /// <summary>
+        /// Creates an RaspberryPi Pin by specifying physical pin number.
+        /// </summary>
+        /// <param name="physicalPinNumber"></param>
         public Pin(int physicalPinNumber)
         {
             _physicalPinNumber = physicalPinNumber;
         }
 
+        /// <summary>
+        /// Returns physical pin number
+        /// </summary>
         public int PhysicalPinNumber
         {
             get
@@ -20,6 +27,9 @@ namespace PiSS_Sensors
             }
         }
 
+        /// <summary>
+        /// Returns WiringPi pin number from Pins table
+        /// </summary>
         public int WiringPiPinNumber
         {
             get
@@ -28,6 +38,9 @@ namespace PiSS_Sensors
             }
         }
 
+        /// <summary>
+        /// Returns pin type read from Pins table
+        /// </summary>
         public PinType PinType
         {
             get

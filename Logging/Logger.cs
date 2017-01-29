@@ -7,9 +7,13 @@ namespace PiSS
     {
         private static String _logFilePath = Environment.SpecialFolder.DesktopDirectory.ToString() + "\\PiSS.log";
         private FileInfo _logFile = new FileInfo(_logFilePath);
-        private int logSize = 20 * 1024 * 1024;
+        private const int logSize = 20 * 1024 * 1024;
         private bool IsDebugRun;
 
+        /// <summary>
+        /// Creates an instance of logging engine.
+        /// </summary>
+        /// <param name="debugRun">Specify if program is running in debug mode.</param>
         public Logger(bool debugRun)
         {
             IsDebugRun = debugRun;
@@ -23,7 +27,12 @@ namespace PiSS
             FATAL
         }
 
-
+        /// <summary>
+        /// Write log message to the log file. If log file doesn't exists, this will create it.
+        /// </summary>
+        /// <param name="logMessage">Message specifying logged event.</param>
+        /// <param name="logLevel">Log level of the message</param>
+        /// <param name="exception">If exception is specified, its message and stacktrace is included in the log.</param>
         public void Log(string logMessage, logLevel logLevel, Exception exception = null)
         {
             string logLine = null;
@@ -68,7 +77,9 @@ namespace PiSS
             File.AppendText(_logFilePath);
         }
 
-
+        /// <summary>
+        /// Creates the log file
+        /// </summary>
         private void Create()
         {
             if (_logFile.Exists == false)
@@ -77,7 +88,10 @@ namespace PiSS
             }
         }
 
-        private void Rollup()
+        /// <summary>
+        /// Applies only if log file exceed maximum size (default 20 MB). It renames current log file to name containing actual date.
+        /// </summary>
+        private void Rollup(int maximumLogSizeInBytes = logSize)
         {
             if ((_logFile.Length >= logSize))
             {
