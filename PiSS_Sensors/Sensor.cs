@@ -67,7 +67,7 @@ namespace PiSS
         }
 
         /// <summary>
-        /// Returns actual pin response (~3.3V returns logical 1, ~0.8V returns logical 0)
+        /// Returns actual pin response (~3.3V returns logical 1, ~0.8V returns logical 0 - MAXIMUM 0.5mA)
         /// </summary>
         public int PinResponse
         {
