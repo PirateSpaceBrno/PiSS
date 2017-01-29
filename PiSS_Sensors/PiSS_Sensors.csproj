@@ -7,7 +7,7 @@
     <ProjectGuid>{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PiSS_Sensors</RootNamespace>
+    <RootNamespace>PiSS</RootNamespace>
     <AssemblyName>PiSS_Sensors</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
