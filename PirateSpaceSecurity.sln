@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS", "PiSS\PiSS.csproj", "{311397D7-9B8D-4828-9C3F-838A26BD8856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS_Sensors", "PiSS-Senzors\PiSS_Sensors.csproj", "{7BC43464-D213-4186-AF90-C6F00823409A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{553D86F8-D621-43B6-AA83-64EB98544B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSM", "GSM\GSM.csproj", "{88F062E4-5230-4302-853A-EFCAF13B8161}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{311397D7-9B8D-4828-9C3F-838A26BD8856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311397D7-9B8D-4828-9C3F-838A26BD8856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311397D7-9B8D-4828-9C3F-838A26BD8856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311397D7-9B8D-4828-9C3F-838A26BD8856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC43464-D213-4186-AF90-C6F00823409A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC43464-D213-4186-AF90-C6F00823409A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC43464-D213-4186-AF90-C6F00823409A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC43464-D213-4186-AF90-C6F00823409A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{553D86F8-D621-43B6-AA83-64EB98544B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{553D86F8-D621-43B6-AA83-64EB98544B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{553D86F8-D621-43B6-AA83-64EB98544B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{553D86F8-D621-43B6-AA83-64EB98544B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F062E4-5230-4302-853A-EFCAF13B8161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F062E4-5230-4302-853A-EFCAF13B8161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F062E4-5230-4302-853A-EFCAF13B8161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F062E4-5230-4302-853A-EFCAF13B8161}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
