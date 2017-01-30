@@ -13,11 +13,11 @@ namespace PiSS
         /// Creates new sensor instance
         /// </summary>
         /// <param name="sensorId">Sensor ID just for marking.</param>
-        /// <param name="sensorPhysicalPinNumber">Number of GPIO pin where the sensor is connected.</param>
-        public Sensor(int sensorId, int sensorPhysicalPinNumber)
+        /// <param name="sensorP">Number of GPIO pin where the sensor is connected.</param>
+        private Sensor(int sensorId, Pin sensorPin)
         {
             _sensorId = sensorId;
-            _sensorPin = new Pin(sensorPhysicalPinNumber);
+            _sensorPin = sensorPin;
 
             // Setup the WiringPi component
             if (Init.WiringPiSetup() == -1)
@@ -27,6 +27,20 @@ namespace PiSS
 
             // Set specified GPIO pin as INPUT
             GPIO.pinMode(Pin.WiringPiPinNumber, (int)GPIO.GPIOpinmode.Input);
+        }
+
+        /// <summary>
+        /// Creates new sensor instance
+        /// </summary>
+        /// <param name="sensorId">Sensor ID just for marking.</param>
+        /// <param name="sensorPhysicalPinNumber">Number of GPIO pin where the sensor is connected.</param>
+        public Sensor Create(int sensorId, int sensorPhysicalPinNumber)
+        {
+            if (Constants.GetPinType(sensorPhysicalPinNumber) != Constants.PinType.GPIO)
+            {
+                return null;
+            }
+            return new Sensor(sensorId, new Pin(sensorPhysicalPinNumber));
         }
 
         /// <summary>

@@ -77,5 +77,15 @@ namespace PiSS
                 return PinsTable.AsEnumerable().First(tuple => tuple.Item2 == pinNumber).Item1;
             }
         }
+
+        /// <summary>
+        /// Returns PinType according to the physical pin number.
+        /// </summary>
+        /// <param name="physicalPinNumber"></param>
+        /// <returns></returns>
+        public static PinType GetPinType(int physicalPinNumber)
+        {
+            return PinsTable.AsEnumerable().First(tuple => tuple.Item1 == physicalPinNumber).Item3;
+        }
     }
 }
