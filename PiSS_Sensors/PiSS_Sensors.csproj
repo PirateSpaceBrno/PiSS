@@ -22,12 +22,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,8 +44,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="Pin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensor.cs" />
   </ItemGroup>
@@ -52,6 +51,10 @@
     <ProjectReference Include="..\Logging\Logging.csproj">
       <Project>{553d86f8-d621-43b6-aa83-64eb98544b7f}</Project>
       <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RaspberryPi2_Pins\RaspberryPi2_Pins.csproj">
+      <Project>{18a9ff77-df4a-41d0-a9ef-57d5c82a1eff}</Project>
+      <Name>RaspberryPi2_Pins</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using PinType = PiSS.Constants.PinType;
+using PinType = RaspberryPi2_Pins.PinTable.PinType;
 
-namespace PiSS
+namespace RaspberryPi2_Pins
 {
     public class Pin
     {
@@ -28,24 +28,28 @@ namespace PiSS
         }
 
         /// <summary>
-        /// Returns WiringPi pin number from Pins table
+        /// Returns WiringPi pin number
         /// </summary>
         public int WiringPiPinNumber
         {
             get
             {
-                return Constants.PinsTable.AsEnumerable().First(tuple => tuple.Item1 == _physicalPinNumber).Item2;
+                var wiringPiPinNumber = PinTable.PinsTable.AsEnumerable().FirstOrDefault(tuple => tuple.Item1 == _physicalPinNumber);
+
+                return (wiringPiPinNumber == null) ? -1 : wiringPiPinNumber.Item2;
             }
         }
 
         /// <summary>
-        /// Returns pin type read from Pins table
+        /// Returns pin type
         /// </summary>
         public PinType PinType
         {
             get
             {
-                return Constants.PinsTable.AsEnumerable().First(tuple => tuple.Item1 == _physicalPinNumber).Item3;
+                var wiringPiPinNumber = PinTable.PinsTable.AsEnumerable().FirstOrDefault(tuple => tuple.Item1 == _physicalPinNumber);
+
+                return (wiringPiPinNumber == null) ? PinType.Undefined : wiringPiPinNumber.Item3;
             }
         }
     }

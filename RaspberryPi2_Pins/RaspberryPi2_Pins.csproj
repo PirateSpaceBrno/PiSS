@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{311397D7-9B8D-4828-9C3F-838A26BD8856}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PiSS</RootNamespace>
-    <AssemblyName>PiSS</AssemblyName>
+    <RootNamespace>RaspberryPi2_Pins</RootNamespace>
+    <AssemblyName>RaspberryPi2_Pins</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,34 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="main.cs" />
+    <Compile Include="Pin.cs" />
+    <Compile Include="PinTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GSM\PiSS_GSM.csproj">
-      <Project>{88f062e4-5230-4302-853a-efcaf13b8161}</Project>
-      <Name>PiSS_GSM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logging\Logging.csproj">
-      <Project>{553d86f8-d621-43b6-aa83-64eb98544b7f}</Project>
-      <Name>Logging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PiSS_DB\PiSS_DB.csproj">
-      <Project>{3c884cfb-04d5-4fa9-b18d-dbf777e62178}</Project>
-      <Name>PiSS_DB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PiSS_Sensors\PiSS_Sensors.csproj">
-      <Project>{f5d278b8-5282-42fe-8a3b-c6f34dad8969}</Project>
-      <Name>PiSS_Sensors</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RaspberryPi2_Pins\RaspberryPi2_Pins.csproj">
-      <Project>{18a9ff77-df4a-41d0-a9ef-57d5c82a1eff}</Project>
-      <Name>RaspberryPi2_Pins</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

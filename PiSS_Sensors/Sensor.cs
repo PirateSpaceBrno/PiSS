@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RaspberryPi2_Pins;
+using System;
 using WiringPi;
 using Thread = System.Threading.Thread;
 
@@ -8,6 +9,7 @@ namespace PiSS
     {
         private int _sensorId;
         private Pin _sensorPin;
+        private static Logger _logger = new Logger();
 
         /// <summary>
         /// Creates new sensor instance
@@ -19,14 +21,30 @@ namespace PiSS
             _sensorId = sensorId;
             _sensorPin = sensorPin;
 
-            // Setup the WiringPi component
-            if (Init.WiringPiSetup() == -1)
+            try
             {
-                Thread.CurrentThread.Abort();
+
+                // Setup the WiringPi component
+                if (Init.WiringPiSetup() == -1)
+                {
+                    Thread.CurrentThread.Abort();
+                }
+                if (SPI.wiringPiSPISetup(0, 20000000) == -1)
+                {
+                    Thread.CurrentThread.Abort();
+                }
+
+                // Set specified GPIO pin as INPUT
+                GPIO.pinMode(Pin.WiringPiPinNumber, (int)GPIO.GPIOpinmode.Input);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log($"Error occured during sensor #{_sensorId} registration by process '{Thread.CurrentThread.Name}'", Logger.logLevel.FATAL, ex);
             }
 
-            // Set specified GPIO pin as INPUT
-            GPIO.pinMode(Pin.WiringPiPinNumber, (int)GPIO.GPIOpinmode.Input);
+            // Report sensor to the user
+            Console.WriteLine($"Sensor #{_sensorId} registered.");
+            _logger.Log($"Sensor #{_sensorId} registered by process '{Thread.CurrentThread.Name}'", Logger.logLevel.INFO);
         }
 
         /// <summary>
@@ -36,8 +54,9 @@ namespace PiSS
         /// <param name="sensorPhysicalPinNumber">Number of GPIO pin where the sensor is connected.</param>
         public static Sensor Create(int sensorId, int sensorPhysicalPinNumber)
         {
-            if (Constants.GetPinType(sensorPhysicalPinNumber) != Constants.PinType.GPIO)
+            if (PinTable.GetPinType(sensorPhysicalPinNumber) != PinTable.PinType.GPIO)
             {
+                _logger.Log($"Process '{Thread.CurrentThread.Name}' tried to register sensor #{sensorId} on not GPIO pin.", Logger.logLevel.FAIL);
                 return null;
             }
             return new Sensor(sensorId, new Pin(sensorPhysicalPinNumber));
@@ -87,7 +106,11 @@ namespace PiSS
         {
             get
             {
-                return GPIO.digitalRead(Pin.WiringPiPinNumber);
+                int response = GPIO.digitalRead(Pin.WiringPiPinNumber);
+
+                _logger.Log($"Sensor #{_sensorId} respond value '{response}' to the process '{Thread.CurrentThread.Name}'", Logger.logLevel.DEBUG);
+
+                return response;
             }
         }
 

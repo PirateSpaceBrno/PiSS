@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS_DB", "PiSS_DB\PiSS_DB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSS_Sensors", "PiSS_Sensors\PiSS_Sensors.csproj", "{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspberryPi2_Pins", "RaspberryPi2_Pins\RaspberryPi2_Pins.csproj", "{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D278B8-5282-42FE-8A3B-C6F34DAD8969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A9FF77-DF4A-41D0-A9EF-57D5C82A1EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
