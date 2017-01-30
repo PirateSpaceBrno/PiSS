@@ -9,7 +9,7 @@ namespace PiSS
 
         static void Main(string[] args)
         {
-            List<Sensor> sensors = new List<Sensor> { new Sensor(1, 37), new Sensor(2, 26), new Sensor(3, 25) };
+            List<Sensor> sensors = new List<Sensor> { Sensor.Create(1, 37) };
 
             while (true)
             {

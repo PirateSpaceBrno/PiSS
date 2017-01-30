@@ -13,7 +13,7 @@ namespace PiSS
         /// Creates new sensor instance
         /// </summary>
         /// <param name="sensorId">Sensor ID just for marking.</param>
-        /// <param name="sensorP">Number of GPIO pin where the sensor is connected.</param>
+        /// <param name="sensorPin">GPIO Pin</param>
         private Sensor(int sensorId, Pin sensorPin)
         {
             _sensorId = sensorId;
@@ -30,11 +30,11 @@ namespace PiSS
         }
 
         /// <summary>
-        /// Creates new sensor instance
+        /// Creates new sensor instance. Returns Null if selected physical pin is not GPIO.
         /// </summary>
         /// <param name="sensorId">Sensor ID just for marking.</param>
         /// <param name="sensorPhysicalPinNumber">Number of GPIO pin where the sensor is connected.</param>
-        public Sensor Create(int sensorId, int sensorPhysicalPinNumber)
+        public static Sensor Create(int sensorId, int sensorPhysicalPinNumber)
         {
             if (Constants.GetPinType(sensorPhysicalPinNumber) != Constants.PinType.GPIO)
             {

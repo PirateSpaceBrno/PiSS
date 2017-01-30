@@ -60,6 +60,14 @@
       <Project>{553d86f8-d621-43b6-aa83-64eb98544b7f}</Project>
       <Name>Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PiSS_DB\PiSS_DB.csproj">
+      <Project>{3c884cfb-04d5-4fa9-b18d-dbf777e62178}</Project>
+      <Name>PiSS_DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PiSS_Sensors\PiSS_Sensors.csproj">
+      <Project>{f5d278b8-5282-42fe-8a3b-c6f34dad8969}</Project>
+      <Name>PiSS_Sensors</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
