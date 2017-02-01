@@ -23,9 +23,9 @@ namespace PiSS
                 }
             }
 
-            Phone phone = new Phone();
+            //Phone phone = new Phone();
 
-            phone.Test();
+            //phone.Test();
         }
     }
 }

@@ -29,10 +29,10 @@ namespace PiSS
                 {
                     Thread.CurrentThread.Abort();
                 }
-                if (SPI.wiringPiSPISetup(0, 20000000) == -1)
-                {
-                    Thread.CurrentThread.Abort();
-                }
+                //if (SPI.wiringPiSPISetup(0, 20000000) == -1)
+                //{
+                //    Thread.CurrentThread.Abort();
+                //}
 
                 // Set specified GPIO pin as INPUT
                 GPIO.pinMode(Pin.WiringPiPinNumber, (int)GPIO.GPIOpinmode.Input);
@@ -43,7 +43,7 @@ namespace PiSS
             }
 
             // Report sensor to the user
-            Console.WriteLine($"Sensor #{_sensorId} registered.");
+            Console.WriteLine($"Sensor #{_sensorId} registered");
             _logger.Log($"Sensor #{_sensorId} registered by process '{Thread.CurrentThread.Name}'", Logger.logLevel.INFO);
         }
 
@@ -56,7 +56,7 @@ namespace PiSS
         {
             if (PinTable.GetPinType(sensorPhysicalPinNumber) != PinTable.PinType.GPIO)
             {
-                _logger.Log($"Process '{Thread.CurrentThread.Name}' tried to register sensor #{sensorId} on not GPIO pin.", Logger.logLevel.FAIL);
+                _logger.Log($"Process '{Thread.CurrentThread.Name}' tried to register sensor #{sensorId} on not GPIO pin", Logger.logLevel.FAIL);
                 return null;
             }
             return new Sensor(sensorId, new Pin(sensorPhysicalPinNumber));

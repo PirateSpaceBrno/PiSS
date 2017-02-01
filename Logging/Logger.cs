@@ -5,7 +5,7 @@ namespace PiSS
 {
     public class Logger
     {
-        private static String _logFilePath = Path.GetTempPath() + "\\PiSS.log";
+        private static String _logFilePath = Path.GetTempPath() + "PiSS.log";
         private FileInfo _logFile = new FileInfo(_logFilePath);
         private const int logSize = 20 * 1024 * 1024;
         private bool IsDebugRun;
