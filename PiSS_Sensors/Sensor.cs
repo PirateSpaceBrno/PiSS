@@ -9,7 +9,7 @@ namespace PiSS
     {
         private int _sensorId;
         private Pin _sensorPin;
-        private static Logger _logger = new Logger();
+        private static Logger _logger = new Logger("PiSS_sensors");
 
         /// <summary>
         /// Creates new sensor instance
@@ -56,6 +56,7 @@ namespace PiSS
         {
             if (PinTable.GetPinType(sensorPhysicalPinNumber) != PinTable.PinType.GPIO)
             {
+                Console.WriteLine($"Process '{Thread.CurrentThread.Name}' tried to register sensor #{sensorId} on not GPIO pin");
                 _logger.Log($"Process '{Thread.CurrentThread.Name}' tried to register sensor #{sensorId} on not GPIO pin", Logger.logLevel.FAIL);
                 return null;
             }
@@ -95,22 +96,21 @@ namespace PiSS
 
                 Enum.TryParse(PinResponse.ToString(), out actualState);
 
+                Console.WriteLine($"Sensor #{_sensorId} respond value '{actualState.ToString()}'");
+                _logger.Log($"Sensor #{_sensorId} respond value '{actualState.ToString()}' to the process '{Thread.CurrentThread.Name}'", Logger.logLevel.DEBUG);
+
                 return actualState;
             }
         }
 
         /// <summary>
-        /// Returns actual pin response (~3.3V returns logical 1, ~0.8V returns logical 0 - MAXIMUM 0.5mA)
+        /// Returns actual pin response (1.3V-MAX 5V returns logical 1)
         /// </summary>
-        public int PinResponse
+        private int PinResponse
         {
             get
             {
-                int response = GPIO.digitalRead(Pin.WiringPiPinNumber);
-
-                _logger.Log($"Sensor #{_sensorId} respond value '{response}' to the process '{Thread.CurrentThread.Name}'", Logger.logLevel.DEBUG);
-
-                return response;
+                return GPIO.digitalRead(Pin.WiringPiPinNumber);
             }
         }
 
@@ -119,8 +119,8 @@ namespace PiSS
         /// </summary>
         public enum SensorState
         {
-            triggered,
-            standby
+            standby,
+            triggered
         }
     }
 }

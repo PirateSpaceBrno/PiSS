@@ -5,17 +5,20 @@ namespace PiSS
 {
     public class Logger
     {
-        private static String _logFilePath = Path.GetTempPath() + "PiSS.log";
-        private FileInfo _logFile = new FileInfo(_logFilePath);
+        private static String _logFilePath;
+        private FileInfo _logFile;
         private const int logSize = 20 * 1024 * 1024;
         private bool IsDebugRun;
 
         /// <summary>
         /// Creates an instance of logging engine.
         /// </summary>
-        public Logger()
+        public Logger(string logTitle)
         {
-            IsDebugRun = File.Exists(Path.GetTempPath() + "PiSS.DEBUG");
+            _logFilePath = $"{Environment.CurrentDirectory}/{logTitle}.log";
+            _logFile = new FileInfo(_logFilePath);
+
+            IsDebugRun = File.Exists($"{Environment.CurrentDirectory}/PiSS.DEBUG");
         }
 
         public enum logLevel
@@ -92,7 +95,7 @@ namespace PiSS
         /// </summary>
         private void Rollup(int maximumLogSizeInBytes = logSize)
         {
-            if ((_logFile.Length >= logSize))
+            if ((_logFile.Exists && _logFile.Length >= logSize))
             {
                 File.Move(_logFilePath, _logFile.Name + DateTime.Now.ToString("yyyymmdd") + _logFile.Extension);
             }
