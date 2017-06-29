@@ -1,0 +1,6 @@
+﻿server=localhost;
+user=piss;
+database=piss;
+port=3306;
+password=30YfoBvcBYvdBttW;
+Character Set=utf8;

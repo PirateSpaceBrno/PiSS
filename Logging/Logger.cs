@@ -15,10 +15,16 @@ namespace PiSS
         /// </summary>
         public Logger(string logTitle)
         {
-            _logFilePath = $"{Environment.CurrentDirectory}/{logTitle}.log";
+            _logFilePath = $"{AppDomain.CurrentDomain.BaseDirectory}\\{logTitle}.log";
+
+            if (File.Exists(_logFilePath) == false)
+            {
+                File.Create(_logFilePath);
+            }
+
             _logFile = new FileInfo(_logFilePath);
 
-            IsDebugRun = File.Exists($"{Environment.CurrentDirectory}/PiSS.DEBUG");
+            IsDebugRun = File.Exists($"{AppDomain.CurrentDomain.BaseDirectory}\\{logTitle}.DEBUG");
         }
 
         public enum logLevel
@@ -74,19 +80,11 @@ namespace PiSS
                 }
             }
 
-            Create();
             Rollup();
-            File.AppendText(_logFilePath);
-        }
 
-        /// <summary>
-        /// Creates the log file
-        /// </summary>
-        private void Create()
-        {
-            if (_logFile.Exists == false)
+            using (StreamWriter w = new StreamWriter(_logFilePath))
             {
-                File.Create(_logFilePath);
+                w.WriteLine(logLine);
             }
         }
 

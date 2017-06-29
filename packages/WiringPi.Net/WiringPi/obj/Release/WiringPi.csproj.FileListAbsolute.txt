@@ -1,0 +1,5 @@
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\WiringPi\bin\Release\WiringPi.dll
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\WiringPi\bin\Release\WiringPi.pdb
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\WiringPi\obj\Release\WiringPi.csprojResolveAssemblyReference.cache
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\WiringPi\obj\Release\WiringPi.dll
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\WiringPi\obj\Release\WiringPi.pdb

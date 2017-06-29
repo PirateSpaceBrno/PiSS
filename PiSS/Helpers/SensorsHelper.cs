@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace PiSS.Helpers
 {
@@ -35,14 +36,15 @@ namespace PiSS.Helpers
         /// <returns></returns>
         public static Sensor.SensorState ScanSensors(List<Sensor> sensors)
         {
-            bool result = false;
+            List<bool> checker = new List<bool>();
 
-            foreach(Sensor sensor in sensors)
+            foreach (Sensor sensor in sensors)
             {
-                result &= (sensor.State == Sensor.SensorState.triggered) ? true : false;
+                checker.Add((sensor.State == Sensor.SensorState.triggered) ? true : false);
             }
 
-            return result ? Sensor.SensorState.triggered : Sensor.SensorState.standby;
+            // If at least one sensor was triggered, return triggered
+            return (checker.AsEnumerable().Where(x => x == true).Count() >= 1) ? Sensor.SensorState.triggered : Sensor.SensorState.standby;
         }
     }
 }

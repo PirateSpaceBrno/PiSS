@@ -1,0 +1,7 @@
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\bin\Release\SPITest.exe
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\bin\Release\SPITest.pdb
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\bin\Release\WiringPi.dll
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\bin\Release\WiringPi.pdb
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.csprojResolveAssemblyReference.cache
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\obj\x86\Release\SPITest.exe
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\ConsoleApplication1\obj\x86\Release\SPITest.pdb

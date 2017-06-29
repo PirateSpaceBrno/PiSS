@@ -1,0 +1,7 @@
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\bin\Release\TestPwm.exe
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\bin\Release\TestPwm.pdb
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\bin\Release\WiringPi.dll
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\bin\Release\WiringPi.pdb
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\obj\Release\TestPwm.csprojResolveAssemblyReference.cache
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\obj\Release\TestPwm.exe
+d:\_projects\PiSS\PiSS\packages\WiringPi.Net\TestPwm\obj\Release\TestPwm.pdb
